@@ -64,17 +64,17 @@ jobs:
           threshold5=81.89
           threshold6=52.88
 
-          if (( $(echo "$COVERAGE1 - $threshold1 <= 0.1" | bc -l) )); then
+          if (( $(echo "$COVERAGE1 - $threshold1 > 0.1" | bc -l) )); then
             echo "New coverage for the module core - $COVERAGE1%. Coverage is improved!"
-          elif (( $(echo "$COVERAGE2 - $threshold2 <= 0.1" | bc -l) )); then
+          elif (( $(echo "$COVERAGE2 - $threshold2 > 0.1" | bc -l) )); then
             echo "New coverage for the module reader-gtfs - $COVERAGE2%. Coverage is improved!"
-          elif (( $(echo "$COVERAGE3 - $threshold3 <= 0.1" | bc -l) )); then
+          elif (( $(echo "$COVERAGE3 - $threshold3 > 0.1" | bc -l) )); then
             echo "New coverage for module web - $COVERAGE3%. Coverage is improved!"
-          elif (( $(echo "$COVERAGE4 - $threshold4 <= 0.1" | bc -l) )); then
+          elif (( $(echo "$COVERAGE4 - $threshold4 > 0.1" | bc -l) )); then
             echo "New coverage for module web-api - $COVERAGE4%. Coverage is improved!"
-          elif (( $(echo "$COVERAGE5 - $threshold5 <= 0.1" | bc -l) )); then
+          elif (( $(echo "$COVERAGE5 - $threshold5 > 0.1" | bc -l) )); then
             echo "New coverage for module navigation - $COVERAGE5%. Coverage is improved!"
-          elif (( $(echo "$COVERAGE6 - $threshold6 <= 0.1" | bc -l) )); then
+          elif (( $(echo "$COVERAGE6 - $threshold6 > 0.1" | bc -l) )); then
             echo "New coverage for module client-hc - $COVERAGE6%. Coverage is improved!"
           else
             echo "Coverage is not improved."
