@@ -15,10 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NewWebAPIUnitTests {
 
     // GHPoint class tests
-    // Test for GHPoint.create method
-    // Test that the method creates a GHPoint object from a JTS Point object
-    // The GHPoint object should have the same latitude and longitude as the JTS Point object
-    // The test is makes sure that the method creates the GHPoint object correctly
+
+    // Test for create method
+    // The test makes sure that the method creates the GHPoint object correctly
     @Test
     public void testCreate() {
         // Arrange
@@ -59,15 +58,24 @@ public class NewWebAPIUnitTests {
     public void testAdd3DPoint() {
         // Arrange
         PointList pointList = new PointList(10, true); 
-
+    
         // Act
         pointList.add(10.0, 20.0, 30.0);
-
+    
         // Assert
         assertEquals(1, pointList.size());
         assertEquals(10.0, pointList.getLat(0));
         assertEquals(20.0, pointList.getLon(0));
         assertEquals(30.0, pointList.getEle(0));
+
+        // Verify that the PointList is not empty
+        assertFalse(pointList.isEmpty());
+        // Add another point and verify the size
+        pointList.add(40.0, 50.0, 60.0);
+        assertEquals(2, pointList.size());
+        assertEquals(40.0, pointList.getLat(1));
+        assertEquals(50.0, pointList.getLon(1));
+        assertEquals(60.0, pointList.getEle(1));
     }
 
     // Instruction class tests
@@ -94,7 +102,7 @@ public class NewWebAPIUnitTests {
 
     // helper class test
     // test for parseList method
-
+    // test that the method parses a string into a list of strings
     @Test
     public void testParseList() {
         // Arrange
