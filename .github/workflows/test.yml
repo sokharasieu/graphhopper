@@ -1,7 +1,9 @@
 name: Test
 on:
   push:
+    - master
   pull_request:
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-22.04
