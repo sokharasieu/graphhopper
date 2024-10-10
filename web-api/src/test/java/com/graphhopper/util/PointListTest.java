@@ -73,7 +73,7 @@ public class PointListTest {
     /*
      * Test for clone method
      * 
-     * Checks that the method creates a clone of the PointList object that respects the prescribed characteristics
+     * Checks that the method creates a valid mutable clone of the PointList object
      */
     @ParameterizedTest
     @ValueSource(booleans = {true, false})
