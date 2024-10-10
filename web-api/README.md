@@ -1,6 +1,5 @@
 # Documentation des nouveaux tests
 
-## Sokhara Vincent Sieu (20213388) et Félix Cormier (20212545)
 
 ## Helper
 ### [parseList(String listStr)](https://github.com/sokharasieu/graphhopper/blob/master/web-api/src/main/java/com/graphhopper/util/Helper.java#L421)
@@ -40,14 +39,3 @@
 - [lien vers le test](https://github.com/sokharasieu/graphhopper/blob/master/web-api/src/test/java/com/graphhopper/NewWebAPIUnitTests.java#L86)
 
 
-| Stats Initiales             | #     |
-|:----------------------------|-------|
-| **Coverage**                |       |
-| com.graphhopper.web-api     | 37.53% |
-
-| Stats Finales               | #     |
-|:----------------------------|-------|
-| **Coverage**                |       |
-| com.graphhopper.web-api     | 41%   |
-
-<img src="testResults.png" max-width="800" />
