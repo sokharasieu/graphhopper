@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - tache-3-vincent
   pull_request:
 jobs:
   build:
@@ -40,6 +41,7 @@ jobs:
             ${{ runner.os}}-node_modules-
       - name: Build ${{ matrix.java-version }}
         run: |
+          java -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -version
           export MAVEN_OPTS="-XX:+PrintFlagsFinal" 
           xvfb-run mvn -B verify -Djavafx.platform=linux jacoco:report -Pcoverage
           unset MAVEN_OPTS
