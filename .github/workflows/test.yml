@@ -15,9 +15,10 @@ jobs:
         flags:
           - "-XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal"
           - "-XX:+UseG1GC"
-          - "-XX:+UseConcMarkSweepGC"
+          - "-XX:+UseZGC"
           - "-XX:+UseParallelGC"
           - "-XX:+UseSerialGC"
+          - "-XX:+UseShenandoahGC"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
@@ -47,6 +48,7 @@ jobs:
             ${{ runner.os}}-node_modules-
       - name: Build with flags ${{ matrix.flags }}
         run: |
+          echo "Running with flags: ${{ matrix.flags }}"
           java -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -version
           export MAVEN_OPTS="${{ matrix.flags }}"
           xvfb-run mvn -B verify -Djavafx.platform=linux jacoco:report -Pcoverage
