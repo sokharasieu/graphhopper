@@ -13,11 +13,11 @@ jobs:
       matrix:
         java-version: [ 22 ]
         flags:
-          - "-XX:+UseG1GC"
-          - "-XX:+UseZGC"
-          - "-XX:+UseParallelGC"
-          - "-XX:+UseSerialGC"
-          - "-XX:+UseShenandoahGC"
+          - "-XX:+UseStringDeduplication"
+          - "-XX:+PrintGCDetails"
+          - "-XX:+HeapDumpOnOutOfMemoryError"
+          - "-XX:MaxInlineSize=35"
+          - "-XX:+UnlockExperimentalVMOptions"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
