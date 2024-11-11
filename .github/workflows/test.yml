@@ -13,7 +13,6 @@ jobs:
       matrix:
         java-version: [ 22 ]
         flags:
-          - "-XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal"
           - "-XX:+UseG1GC"
           - "-XX:+UseZGC"
           - "-XX:+UseParallelGC"
