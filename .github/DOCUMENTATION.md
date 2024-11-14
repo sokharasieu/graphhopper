@@ -1,9 +1,11 @@
 # Documentation pour la tâche 3
 
 ## Changements apportés à la Github Action pour permettre l'exécution avec cing flags
+En ajoutant le code de l'exemple dans Cryptomator, nous avons réalisé que, pour exécuter un flag spécifique, il fallait le spécifier dans la ligne suivante : `export MAVEN_OPTS="-XX:+PrintFlagsFinal"`.
+![changement initial](img/exemple.png)
 
-
-
+Pour exécuter les tests en parallèle, nous avons conservé la stratégie déjà implémentée dans notre GitHub Action, qui utilise une matrice. Il fallait définir les flags que nous souhaitions tester en tant que paramètres, et de remplacer `export MAVEN_OPTS="-XX:+PrintFlagsFinal"` par `export MAVEN_OPTS="${{ matrix.flags }}"`.
+![matrix strategy](img/matrix.png)
 ## Flags ajoutés
 
 ### -XX:+UseStringDeduplication
